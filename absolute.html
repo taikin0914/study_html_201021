@@ -1,0 +1,42 @@
+<!-- I watched the html YouTube video of 생활코딩 and wrote the code. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <style>
+        #parent, #other, #grand{
+            border:10px solid tomato;
+        }
+        #grand{
+/* position의 값이 absolute인 me가 position 값이 relative인
+부모를 만나게 되면 그 부모를 기준으로 위치를 정함 */
+            position: relative;
+        }
+        #me{
+            background-color: black;
+            color:white;
+/* absolute me를 절대적 위치로 바꿀 수가 있다.
+me의 부모는 parent이지만 absolute를 쓰면서 절대적인 위치로
+표현이 가능해짐  */
+/* left와 top가 없으면 부모 element를 기준으로 위치를 정함. */
+/* me에 absolute를 쓰면 parent와의 부모관계가 끊기기 때문에
+자신의 컨텐츠 크기만큼 된다. */
+            position: absolute;
+            left:0px;
+            top:0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="other">other</div>
+    <div id="grand">
+        grand
+        <div id="parent">
+            parent
+            <div id="me">me</div>
+        </div>
+    </div>
+</body>
+</html>
